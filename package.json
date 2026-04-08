@@ -1,0 +1,32 @@
+﻿{
+	"name": "trellis-api-core",
+	"version": "0.0.1",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./client": "./src/client.ts"
+	},
+	"peerDependencies": {
+		"@tanstack/react-query": "^5.0.0",
+		"zod": "^3.0.0"
+	},
+	"peerDependenciesMeta": {
+		"@tanstack/react-query": {
+			"optional": true
+		}
+	},
+	"scripts": {
+		"test": "pnpm run test:runtime && tsgo --noEmit -p tsconfig.test.json",
+		"test:runtime": "tsgo -p tsconfig.runtime.json && node .runtime-test-build/test/runtime-tests.js && powershell -NoProfile -Command \"Remove-Item '.runtime-test-build' -Recurse -Force -ErrorAction SilentlyContinue\"",
+		"test:types": "tsgo --noEmit -p tsconfig.test.json"
+	},
+	"devDependencies": {
+		"type-test-core": "^0.0.1",
+		"@tanstack/react-query": "^5.80.7",
+		"@types/node": "^25.2.1",
+		"tsx": "^4.21.0",
+		"@typescript/native-preview": "^7.0.0-dev.20260325.1",
+		"zod": "^3.25.36"
+	}
+}
+

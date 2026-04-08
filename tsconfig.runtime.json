@@ -1,0 +1,15 @@
+{
+	"extends": "./tsconfig.test.json",
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"rewriteRelativeImportExtensions": true,
+		"emitDeclarationOnly": false,
+		"declaration": false,
+		"declarationMap": false,
+		"sourceMap": false,
+		"outDir": "./.runtime-test-build"
+	},
+	"include": ["src", "test/runtime-tests.ts"]
+}
